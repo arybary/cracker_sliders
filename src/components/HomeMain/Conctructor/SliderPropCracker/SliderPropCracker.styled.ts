@@ -1,33 +1,17 @@
 import { Slider } from "@mui/material";
 import styled from "styled-components";
 
-interface StyledSliderProps {
-  colorSl: string;
-}
-
-interface StyledImgProps {
-  colorImg: string;
-}
-
 export const WraooerSlider = styled.div`
   display: flex;
   aling-items: center;
 `;
-export const StyledImg = styled.img<StyledImgProps>`
-  display: block;
-  -webkit-mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  background-color: ${({ colorImg }) => colorImg};
-  margin: 0 10px;
-`;
-export const StyledSlider = styled(Slider)<StyledSliderProps>`
+
+export const StyledSlider = styled(Slider)`
   margin: 20px;
   && {
-    color: ${({ colorSl }) => colorSl};
     .MuiSlider-thumb {
       background-color: white;
-      border: 2px solid ${({ colorSl }) => colorSl};
+      border: 2px solid;
     }
   }
 `;

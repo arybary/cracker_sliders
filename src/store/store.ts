@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers, Middleware } from "redux";
 import crackerPropsSlice from "./slice/crackerProps.slice";
+import packSlice from "./slice/pack.slice";
 
 const rootReduser = combineReducers({
   crackerProps: crackerPropsSlice,
+  pack: packSlice,
 });
 
 export type RootState = ReturnType<typeof rootReduser>;

@@ -2,6 +2,7 @@ import { createSelector } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
 export const crackerPropsSelector = (state: RootState) => state.crackerProps;
+export const packSelector = (state: RootState) => state.pack;
 
 export const crackerPropsValue1Selector = createSelector(
   crackerPropsSelector,

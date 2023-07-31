@@ -26,24 +26,7 @@ const crackerPropsSlice = createSlice({
       }>
     ) => {
       const { crackerPropsName, value } = action.payload;
-      const sumOfCrackerPropsValue =
-        state.crackerPropsValue1 +
-        state.crackerPropsValue2 +
-        state.crackerPropsValue3 +
-        state.crackerPropsValue4 -
-        state[crackerPropsName];
-      const availableSpace =
-        100 - sumOfCrackerPropsValue + state[crackerPropsName];
-
-      if (value <= 0) {
-        state[crackerPropsName] = 0;
-      } else if (value >= 100) {
-        state[crackerPropsName] = 100;
-      } else if (value > availableSpace) {
-        state[crackerPropsName] = availableSpace;
-      } else {
-        state[crackerPropsName] = value;
-      }
+      state[crackerPropsName] = value;
       state.crackerPropsValue4 =
         100 -
         (state.crackerPropsValue1 +

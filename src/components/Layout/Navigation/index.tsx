@@ -1,26 +1,23 @@
 import { useLocation } from "react-router-dom";
 import { Navigation, NavigationLink } from "./Navigation.styled";
 
+const navItems = [
+  { name: 'HOME', path: '/' },
+  { name: 'ABOUT US', path: '/about' },
+  { name: 'CONTACTS US', path: '/contacts' },
+  { name: 'CHECKOUT', path: '/checkout' },
+  { name: 'ACCOUNT', path: '/account' },
+];
+
 const HeaderNavigation = () => {
   const location = useLocation();
 
   return (
     <Navigation>
-      <NavigationLink to="/" isActive={location.pathname === '/'}>
-        HOME
-      </NavigationLink>
-      <NavigationLink to="/about" isActive={location.pathname === '/about'}>
-        ABOUT US
-      </NavigationLink>
-      <NavigationLink to="/contacts" isActive={location.pathname === '/contacts'}>
-        CONTACTS US
-      </NavigationLink>
-      <NavigationLink to="/checkout" isActive={location.pathname === '/checkout'}>
-        CHECKOUT
-      </NavigationLink>
-      <NavigationLink to="/account" isActive={location.pathname === '/account'}>
-        ACCOUNT
-      </NavigationLink>
+      {navItems.map(({name,path})=><NavigationLink key={path} to={path} active={(location.pathname === path ? 'true' : 'false')}>
+        {name}
+      </NavigationLink>)}
+     
     </Navigation>
   );
 };

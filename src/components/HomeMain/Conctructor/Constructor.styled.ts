@@ -4,7 +4,7 @@ export const ConstructorContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 606px;
-
+  gap: 24px;
 `;
 
 export const ConstructorTitle = styled.div`
@@ -25,14 +25,14 @@ export const ConstructorSubTitle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 54px;
   font-family: Rubik;
   font-size: 28px;
   font-weight: 400;
   line-height: 36px;
   letter-spacing: 0em;
   text-align: left;
-  color: #4d4d4d;  
+
+  color: #4d4d4d;
 `;
 export const AboutContainerText = styled.div`
   display: flex;

@@ -1,5 +1,10 @@
 import React from "react";
-import { crackerPropsValue1Selector, crackerPropsValue2Selector, crackerPropsValue3Selector, crackerPropsValue4Selector } from "../../../store/selectors/selector";
+import {
+  crackerPropsValue1Selector,
+  crackerPropsValue2Selector,
+  crackerPropsValue3Selector,
+  crackerPropsValue4Selector,
+} from "../../../store/selectors/selector";
 
 import { CrackerPropsState } from "../../../store/slice/crackerProps.slice";
 
@@ -9,6 +14,7 @@ import {
   ConstructorSubTitle,
   ConstructorTitle,
 } from "./Constructor.styled";
+import SelectPack from "./SelectPack";
 import SliderPropCracker from "./SliderPropCracker";
 
 interface CrackerProps {
@@ -17,15 +23,14 @@ interface CrackerProps {
   value: number;
   color: string;
   disabled: boolean;
-  maxValue:number
+  maxValue: number;
 }
 
 const Constructor: React.FC = () => {
-const crackerPropsValue1 = useTypedSelector(crackerPropsValue1Selector)
-const crackerPropsValue2 = useTypedSelector(crackerPropsValue2Selector)
-const crackerPropsValue3 = useTypedSelector(crackerPropsValue3Selector)
-const crackerPropsValue4 = useTypedSelector(crackerPropsValue4Selector)
-
+  const crackerPropsValue1 = useTypedSelector(crackerPropsValue1Selector);
+  const crackerPropsValue2 = useTypedSelector(crackerPropsValue2Selector);
+  const crackerPropsValue3 = useTypedSelector(crackerPropsValue3Selector);
+  const crackerPropsValue4 = useTypedSelector(crackerPropsValue4Selector);
 
   const crackerProp: CrackerProps[] = [
     {
@@ -68,6 +73,7 @@ const crackerPropsValue4 = useTypedSelector(crackerPropsValue4Selector)
       {crackerProp.map((prop) => (
         <SliderPropCracker key={prop.id} {...prop} />
       ))}
+      <SelectPack/>
     </ConstructorContainer>
   );
 };

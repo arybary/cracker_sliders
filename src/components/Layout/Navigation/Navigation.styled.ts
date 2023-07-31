@@ -14,10 +14,11 @@ export const Navigation = styled.nav`
   text-align: left;
 `;
 
-export const NavigationLink = styled(Link)<{ isActive: boolean }>`
+export const NavigationLink = styled(Link)<{ active: "true" | "false" }>`
   padding: 32px 0px 32px 0px;
   margin: 0;
   color: #fff;
   text-decoration: none;
-  border-bottom: ${({ isActive }) => (isActive ? "2px solid #FF4200" : "none")};
+  border-bottom: ${({ active }) =>
+    active === "true" ? "2px solid #FF4200" : "none"};
 `;

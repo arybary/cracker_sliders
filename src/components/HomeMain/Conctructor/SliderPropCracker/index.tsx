@@ -1,9 +1,8 @@
-import React, { ChangeEventHandler } from "react";
+import React from "react";
 import { CrackerPropsState } from "../../../../store/slice/crackerProps.slice";
 import { useActions } from "../../../../store/useActions";
 import {
   SliderValue,
-  StyledImg,
   StyledSlider,
   WraooerSlider,
 } from "./SliderPropCracker.styled";
@@ -22,9 +21,7 @@ const SliderPropCracker: React.FC<CrackerSliderProps> = ({
   name,
   value,
   maxValue,
-
   color,
-  disabled,
 }) => {
   const { setCrackerPropsValue } = useActions();
   const handleSliderChange = (event: any) => {
@@ -37,12 +34,12 @@ const SliderPropCracker: React.FC<CrackerSliderProps> = ({
   };
   return (
     <WraooerSlider>
-      <StyledImg src={`cracker_property_${id}.svg`} colorImg={color} />
+      <img src={`cracker_property_color_${id}.svg`} />
       <StyledSlider
-        defaultValue={value}
+        value={value}
         min={1}
         max={100}
-        colorSl={color}
+        sx={{ color: color }}
         onChange={handleSliderChange}
       />
 
