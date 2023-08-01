@@ -1,47 +1,29 @@
-import {
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-} from "@mui/material";
 import React from "react";
-import { packSelector } from "../../../../store/selectors/selector";
-import { PackOption, PackState } from "../../../../store/slice/pack.slice";
 import { useActions } from "../../../../store/useActions";
+import { packSelector } from "../../../../store/selectors/selector";
 import { useTypedSelector } from "../../../../store/useTypedSelector";
+import { PackOptions } from "../../../../store/slice/pack.slice";
+import { SelectContainer, StyledSelect } from "./SelectPack.styled";
 
 const SelectPack: React.FC = () => {
   const { setSelectedPack } = useActions();
   const selectedPack = useTypedSelector(packSelector);
 
-  const handlePackChange = (event: SelectChangeEvent<PackState>) => {
-    setSelectedPack(event.target.value as PackOption );
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedPack(event.target.value as PackOptions | null);
   };
 
-  return (
-    <FormControl>
-      <InputLabel id="pack-select-label" style={{ color: '#FF4200' }}>
-        Текст
-      </InputLabel>
-      <Select
-        labelId="pack-select-label"
-        id="pack-select"
-        value={selectedPack}
-        onChange={handlePackChange}
-        style={{ color: '#FF4200', borderBottom: '2px solid #FF4200' }}
-      >
-        <MenuItem value="small pack" style={{ color: '#FF4200' }}>
-          Small Pack
-        </MenuItem>
-        <MenuItem value="medium pack" style={{ color: '#FF4200' }}>
-          Medium Pack
-        </MenuItem>
-        <MenuItem value="large pack" style={{ color: '#FF4200' }}>
-          Large Pack
-        </MenuItem>
-      </Select>
-    </FormControl>
+  return (<SelectContainer>
+    <img src="pack.svg" alt="pack" />
+    <StyledSelect value={selectedPack || ""} onChange={handleChange}>
+      <option value="" disabled>
+        Choose your pack
+      </option>
+      <option value="small pack">Small Pack</option>
+      <option value="medium pack">Medium Pack</option>
+      <option value="large pack">Large Pack</option>
+    </StyledSelect>
+    </SelectContainer>
   );
 };
 

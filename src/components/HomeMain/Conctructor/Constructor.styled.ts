@@ -34,23 +34,8 @@ export const ConstructorSubTitle = styled.div`
 
   color: #4d4d4d;
 `;
-export const AboutContainerText = styled.div`
+export const ButtonsContainer = styled.div`
   display: flex;
-  height: 372px;
+  justify-content: space-between;
   align-items: center;
-  background: #e5d3cfcc;
-  padding-left: 60px;
-`;
-
-export const AboutText = styled.span`
-  display: flex;
-  height: 252px;
-  max-width: 65%;
-  font-family: Rubik;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 28px;
-  letter-spacing: 0em;
-  text-align: left;
-  overflow: hidden;
 `;

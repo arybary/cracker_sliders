@@ -1,5 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import Footer from "./Footer";
 import Header from "./Header";
 import { Root } from "./Layout.styled";
 import HeaderNavigation from "./Navigation";
@@ -12,6 +13,7 @@ const Layout: React.FC = () => {
       <main>
         <Outlet />
       </main>
+      <Footer/>
     </Root>
   );
 };

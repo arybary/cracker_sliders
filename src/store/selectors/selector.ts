@@ -1,22 +1,15 @@
 import { createSelector } from "@reduxjs/toolkit";
+import { crackersAdapter } from "../slice/crackers.slice";
 import { RootState } from "../store";
 
 export const crackerPropsSelector = (state: RootState) => state.crackerProps;
-export const packSelector = (state: RootState) => state.pack;
+export const packSelector = (state: RootState) => state.pack.selectedPack;
 
-export const crackerPropsValue1Selector = createSelector(
-  crackerPropsSelector,
-  ({ crackerPropsValue1 }) => crackerPropsValue1
+export const { selectAll: selectAllCrackers } = crackersAdapter.getSelectors(
+  (state: RootState) => state.crackers
 );
-export const crackerPropsValue2Selector = createSelector(
-  crackerPropsSelector,
-  ({ crackerPropsValue2 }) => crackerPropsValue2
-);
-export const crackerPropsValue3Selector = createSelector(
-  crackerPropsSelector,
-  ({ crackerPropsValue3 }) => crackerPropsValue3
-);
-export const crackerPropsValue4Selector = createSelector(
-  crackerPropsSelector,
-  ({ crackerPropsValue4 }) => crackerPropsValue4
+
+export const getTotalCostCrackers = createSelector(
+  selectAllCrackers,
+  (crackers) => crackers.reduce((value, cracker) => cracker.cost + value, 0)
 );

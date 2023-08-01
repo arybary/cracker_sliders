@@ -1,15 +1,13 @@
 import React from "react";
-import {
-  crackerPropsValue1Selector,
-  crackerPropsValue2Selector,
-  crackerPropsValue3Selector,
-  crackerPropsValue4Selector,
-} from "../../../store/selectors/selector";
-
+import { crackerPropsSelector } from "../../../store/selectors/selector";
+import { v4 as uuidv4 } from "uuid";
 import { CrackerPropsState } from "../../../store/slice/crackerProps.slice";
+import { useActions } from "../../../store/useActions";
 
 import { useTypedSelector } from "../../../store/useTypedSelector";
+import AddButton from "./AddButton";
 import {
+  ButtonsContainer,
   ConstructorContainer,
   ConstructorSubTitle,
   ConstructorTitle,
@@ -27,10 +25,17 @@ interface CrackerProps {
 }
 
 const Constructor: React.FC = () => {
-  const crackerPropsValue1 = useTypedSelector(crackerPropsValue1Selector);
-  const crackerPropsValue2 = useTypedSelector(crackerPropsValue2Selector);
-  const crackerPropsValue3 = useTypedSelector(crackerPropsValue3Selector);
-  const crackerPropsValue4 = useTypedSelector(crackerPropsValue4Selector);
+  const crackerProps = useTypedSelector(crackerPropsSelector);
+  const {
+    crackerPropsValue1,
+    crackerPropsValue2,
+    crackerPropsValue3,
+    crackerPropsValue4,
+  } = crackerProps;
+
+  const { addCracker } = useActions();
+  const addItem = () =>
+    addCracker({ id: uuidv4(), props: crackerProps, cost: 6, weight: 5 });
 
   const crackerProp: CrackerProps[] = [
     {
@@ -66,6 +71,7 @@ const Constructor: React.FC = () => {
       maxValue: 97,
     },
   ];
+
   return (
     <ConstructorContainer>
       <ConstructorTitle>CRACKER CONSTRUCTOR</ConstructorTitle>
@@ -73,7 +79,10 @@ const Constructor: React.FC = () => {
       {crackerProp.map((prop) => (
         <SliderPropCracker key={prop.id} {...prop} />
       ))}
-      <SelectPack/>
+      <ButtonsContainer>
+        <SelectPack />
+        <AddButton onClickAdd={addItem} />
+      </ButtonsContainer>
     </ConstructorContainer>
   );
 };

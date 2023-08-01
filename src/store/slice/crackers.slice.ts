@@ -1,30 +1,31 @@
 import { createSlice, createEntityAdapter, EntityState} from '@reduxjs/toolkit';
+import { CrackerPropsState } from './crackerProps.slice';
 
 
 
 export interface Cracker {
-  id: number;
-  props: string;
+  id: string;
+  props: CrackerPropsState;
   cost: number;
   weight: number;
 }
 
-const itemsAdapter = createEntityAdapter<Cracker>();
+export const crackersAdapter = createEntityAdapter<Cracker>();
 
-const initialState: EntityState<Cracker> = itemsAdapter.getInitialState();
+const initialState: EntityState<Cracker> = crackersAdapter.getInitialState();
 
-const itemsSlice = createSlice({
-  name: 'items',
+const crackersSlice = createSlice({
+  name: 'crackers',
   initialState,
   reducers: {
-    addItem: itemsAdapter.addOne,
-    removeItem: itemsAdapter.removeOne,
+    addCracker: crackersAdapter.addOne,
+    removeCracker: crackersAdapter.removeOne,
   },
 });
 
-export const { addItem, removeItem} = itemsSlice.actions;
+export const { addCracker, removeCracker} = crackersSlice.actions;
 
-export default itemsSlice.reducer;
+export default crackersSlice.reducer;
 
 // Helper functions to calculate cost and weight based on sliders percentages
 function calculateCost(sliders: { [key: string]: number }): number {
