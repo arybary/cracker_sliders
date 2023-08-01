@@ -1,5 +1,10 @@
 import React from "react";
-import { StyledFooter, StyledLink } from "./Footer.styled";
+import {
+  StyledFooter,
+  StyledLink,
+  StyledText,
+  StyledTitle,
+} from "./Footer.styled";
 import {
   Share,
   Pinterest,
@@ -12,46 +17,51 @@ import {
 const Footer: React.FC = () => (
   <StyledFooter>
     <div>
-      <div>
+      <StyledTitle>
         <Phone />
-        PHONE
-      </div>
-      <div>
+
+        <span>PHONE</span>
+      </StyledTitle>
+      <StyledText>
         <StyledLink href="tel:+489873456789">+48 (987) 345 - 6789</StyledLink>
-      </div>
+      </StyledText>
     </div>
     <div>
-      <LocationOn />
-      ADRESS
-      <div>
-        <p>
-          Cracker Inc. <br />
-          10 Cloverfield Lane <br />
-          Berlin IL 10928, Germany
-        </p>
-      </div>
+      <StyledTitle>
+        <LocationOn />
+        ADRESS
+      </StyledTitle>
+      <StyledText>
+        Cracker Inc. <br />
+        10 Cloverfield Lane <br />
+        Berlin IL 10928, Germany
+      </StyledText>
     </div>
     <div>
-      <Share />
-      share
-      <div>
-        <Pinterest />
-        <StyledLink target="_blank" href="/">
-          pinterest.com
-        </StyledLink>
-      </div>
-      <div>
-        <Facebook />
-        <StyledLink target="_blank" href="/">
-          facebook.com
-        </StyledLink>
-      </div>
-      <div>
-        <Instagram />
-        <StyledLink target="_blank" href="/">
-          instagram.com
-        </StyledLink>
-      </div>
+      <StyledTitle>
+        <Share />
+        SHARE
+      </StyledTitle>
+      <StyledText>
+        <StyledTitle>
+          <Pinterest />
+          <StyledLink target="_blank" href="/">
+            pinterest.com
+          </StyledLink>
+        </StyledTitle>
+        <StyledTitle>
+          <Facebook />
+          <StyledLink target="_blank" href="/">
+            facebook.com
+          </StyledLink>
+        </StyledTitle>
+        <StyledTitle>
+          <Instagram />
+          <StyledLink target="_blank" href="/">
+            instagram.com
+          </StyledLink>
+        </StyledTitle>
+      </StyledText>
     </div>
   </StyledFooter>
 );
