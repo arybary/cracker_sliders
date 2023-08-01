@@ -7,7 +7,7 @@ export const StyledFooter = styled.footer`
   line-height: 18px;
   letter-spacing: 1px;
   text-align: left;
-  background-image: url("footer_cracker.png");
+  background-image: url("footer-cracker.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 788px;

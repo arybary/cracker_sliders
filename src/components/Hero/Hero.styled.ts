@@ -4,10 +4,7 @@ import styled from "styled-components";
 export const HeroContainer = styled.div`
   height: 734px;
   padding-top: 88px;
-  background-image: url("hero_cracker.png");
-  background-position: 0 -146px;
-  background-size: 100% 880px;
-  background-repeat: no-repeat;
+  
   font-family: Rubik;
   display: flex;
   flex-wrap: wrap;
