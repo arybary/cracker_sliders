@@ -10,7 +10,9 @@ const packSlice = createSlice({
   name: "pack",
   initialState,
   reducers: {
-    setSelectedPack: (state, action: PayloadAction<PackState>) =>( {...state,...action.payload 
+    setSelectedPack: (state, action: PayloadAction<PackState>) => ({
+      ...state,
+      ...action.payload,
     }),
   },
 });
