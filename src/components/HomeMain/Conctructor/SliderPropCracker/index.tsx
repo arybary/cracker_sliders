@@ -1,22 +1,13 @@
 import React from "react";
-import { CrackerPropsState } from "../../../../store/slice/crackerProps.slice";
 import { useActions } from "../../../../store/useActions";
+import { CrackerPropsForSlider } from "../../../../type";
 import {
   SliderValue,
   StyledSlider,
   WraooerSlider,
 } from "./SliderPropCracker.styled";
 
-interface CrackerSliderProps {
-  id: number;
-  name: keyof CrackerPropsState;
-  value: number;
-  color: string;
-  disabled: boolean;
-  maxValue: number;
-}
-
-const SliderPropCracker: React.FC<CrackerSliderProps> = ({
+const SliderPropCracker: React.FC<CrackerPropsForSlider> = ({
   id,
   name,
   value,
@@ -34,7 +25,7 @@ const SliderPropCracker: React.FC<CrackerSliderProps> = ({
   };
   return (
     <WraooerSlider>
-      <img src={`cracker_property_color_${id}.svg`} />
+      <img src={`cracker_property_color_${id}.svg`} alt={name} />
       <StyledSlider
         value={value}
         min={1}

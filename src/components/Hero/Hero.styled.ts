@@ -4,7 +4,6 @@ import styled from "styled-components";
 export const HeroContainer = styled.div`
   height: 734px;
   padding-top: 88px;
-  
   font-family: Rubik;
   display: flex;
   flex-wrap: wrap;

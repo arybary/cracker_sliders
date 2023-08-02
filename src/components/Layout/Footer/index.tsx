@@ -19,7 +19,6 @@ const Footer: React.FC = () => (
     <div>
       <StyledTitle>
         <Phone />
-
         <span>PHONE</span>
       </StyledTitle>
       <StyledText>

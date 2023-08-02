@@ -1,9 +1,11 @@
 import React from "react";
-import { crackerPropsSelector } from "../../../store/selectors/selector";
+import {
+  crackerPropsSelector,
+  getPackOptions,
+  getTotalCostCrackers,
+} from "../../../store/selectors/selector";
 import { v4 as uuidv4 } from "uuid";
-import { CrackerPropsState } from "../../../store/slice/crackerProps.slice";
 import { useActions } from "../../../store/useActions";
-
 import { useTypedSelector } from "../../../store/useTypedSelector";
 import AddButton from "./AddButton";
 import {
@@ -14,18 +16,14 @@ import {
 } from "./Constructor.styled";
 import SelectPack from "./SelectPack";
 import SliderPropCracker from "./SliderPropCracker";
-
-interface CrackerProps {
-  id: number;
-  name: keyof CrackerPropsState;
-  value: number;
-  color: string;
-  disabled: boolean;
-  maxValue: number;
-}
+import { CrackerPropsForSlider } from "../../../type";
 
 const Constructor: React.FC = () => {
   const crackerProps = useTypedSelector(crackerPropsSelector);
+  const pack = useTypedSelector(getPackOptions);
+  const total = useTypedSelector(getTotalCostCrackers);
+  const { addCracker } = useActions();
+
   const {
     crackerPropsValue1,
     crackerPropsValue2,
@@ -33,11 +31,10 @@ const Constructor: React.FC = () => {
     crackerPropsValue4,
   } = crackerProps;
 
-  const { addCracker } = useActions();
   const addItem = () =>
-    addCracker({ id: uuidv4(), props: crackerProps, cost: 6, weight: 5 });
+    addCracker({ id: uuidv4(), props: crackerProps, ...pack });
 
-  const crackerProp: CrackerProps[] = [
+  const crackerProp: CrackerPropsForSlider[] = [
     {
       id: 1,
       name: "crackerPropsValue1",
@@ -75,7 +72,7 @@ const Constructor: React.FC = () => {
   return (
     <ConstructorContainer>
       <ConstructorTitle>CRACKER CONSTRUCTOR</ConstructorTitle>
-      <ConstructorSubTitle>Current Value: 143€</ConstructorSubTitle>
+      <ConstructorSubTitle>Current Value: {total}€</ConstructorSubTitle>
       {crackerProp.map((prop) => (
         <SliderPropCracker key={prop.id} {...prop} />
       ))}

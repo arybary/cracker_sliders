@@ -8,7 +8,7 @@ export const DetailsButton = styled.div`
 `;
 
 export const DialogContainer = styled(Dialog)`
-top:500;
+  top: 500;
   .MuiDialog-paper {
     margin: 64px 24px;
   }

@@ -2,7 +2,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
-import TestContent from "./components/TestContent";
+import TestContent from "./page/TestContent";
 import HomePage from "./page/Home";
 import store from "./store/store";
 

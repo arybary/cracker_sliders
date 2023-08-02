@@ -10,4 +10,4 @@ export const HomeContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  `;
+`;

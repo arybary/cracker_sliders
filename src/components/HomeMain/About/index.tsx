@@ -25,9 +25,10 @@ const About: React.FC = () => (
         laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
         in reprehenderit.
       </AboutText>
-    
     </AboutContainerText>
-    <WrapperLogo>  <Logo/></WrapperLogo>  
+    <WrapperLogo>
+      <Logo />
+    </WrapperLogo>
   </AboutContainer>
 );
 

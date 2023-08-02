@@ -31,9 +31,9 @@ export const ConstructorSubTitle = styled.div`
   line-height: 36px;
   letter-spacing: 0em;
   text-align: left;
-
   color: #4d4d4d;
 `;
+
 export const ButtonsContainer = styled.div`
   display: flex;
   justify-content: space-between;

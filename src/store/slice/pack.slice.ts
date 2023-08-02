@@ -1,18 +1,12 @@
-// packSlice.ts
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-export type PackOptions = 'small' | 'medium' | 'large';
-
-export interface PackState {
-  selectedPack: PackOptions | null;
-}
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { PackOptions, PackState } from "../../type";
 
 const initialState: PackState = {
   selectedPack: null,
 };
 
 const packSlice = createSlice({
-  name: 'pack',
+  name: "pack",
   initialState,
   reducers: {
     setSelectedPack: (state, action: PayloadAction<PackOptions | null>) => {

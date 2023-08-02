@@ -6,13 +6,12 @@ import {
   DetailsButton,
   DialogContainer,
 } from "./Details.styled";
-import {  DialogContent, IconButton } from "@mui/material";
+import { DialogContent, IconButton } from "@mui/material";
 import DetailsTable from "./DetalisTable";
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from "@mui/icons-material/Close";
 
 const Details: React.FC = () => {
   const [open, setOpen] = React.useState(false);
-  
 
   const handleClick = () => {
     setOpen(!open);

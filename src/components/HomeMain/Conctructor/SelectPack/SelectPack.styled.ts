@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const SelectContainer = styled.div`
   display: flex;
-  gap:20px;
+  gap: 20px;
 `;
 
 export const StyledSelect = styled.select`
@@ -29,9 +29,10 @@ export const StyledSelect = styled.select`
 `;
 
 export const StyledOption = styled.option`
-display:flex;
-align-items: center;
-outline: none;
+  display: flex;
+  align-items: center;
+  outline: none;
   width: 225px;
   height: 100px;
+  border-bottom: 2px solid #ff4200;
 `;
