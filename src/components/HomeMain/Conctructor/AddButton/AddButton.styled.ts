@@ -24,7 +24,6 @@ export const ButtonContainer = styled.button`
   &:hover {
     width: 230px;
     border-radius: 90px;
-    content: "Add to cart";
   }
   &:hover::before {
     content: "ADD TO CART";
