@@ -1,8 +1,8 @@
 import React from "react";
 import {
   crackerPropsSelector,
-  getPackOptions,
   getTotalCostCrackers,
+  packSelector,
 } from "../../../store/selectors/selector";
 import { v4 as uuidv4 } from "uuid";
 import { useActions } from "../../../store/useActions";
@@ -20,7 +20,7 @@ import { CrackerPropsForSlider } from "../../../type";
 
 const Constructor: React.FC = () => {
   const crackerProps = useTypedSelector(crackerPropsSelector);
-  const pack = useTypedSelector(getPackOptions);
+  const pack = useTypedSelector(packSelector);
   const total = useTypedSelector(getTotalCostCrackers);
   const { addCracker } = useActions();
 
@@ -32,7 +32,7 @@ const Constructor: React.FC = () => {
   } = crackerProps;
 
   const addItem = () =>
-    addCracker({ id: uuidv4(), props: crackerProps, ...pack });
+    addCracker({ id: uuidv4(), props: crackerProps, option:pack });
 
   const crackerProp: CrackerPropsForSlider[] = [
     {

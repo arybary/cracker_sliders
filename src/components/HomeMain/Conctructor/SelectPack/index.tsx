@@ -1,28 +1,38 @@
 import React from "react";
 import { useActions } from "../../../../store/useActions";
-import { packNameSelector } from "../../../../store/selectors/selector";
-import { useTypedSelector } from "../../../../store/useTypedSelector";
-import { SelectContainer, StyledOption, StyledSelect } from "./SelectPack.styled";
-import { PackOptions } from "../../../../type";
+import {
+  SelectContainer,
+  StyledOption,
+  StyledSelect,
+} from "./SelectPack.styled";
+import { packs } from "../../../../constant";
+import { ExpandLess, ExpandMore } from "@mui/icons-material";
 
 const SelectPack: React.FC = () => {
+  const [open, setOpen] = React.useState(false);
   const { setSelectedPack } = useActions();
-  const selectedPack = useTypedSelector(packNameSelector);
 
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedPack(event.target.value as PackOptions | null);
-  };
-
-  return (<SelectContainer>
-    <img src="pack.svg" alt="pack" />
-    <StyledSelect value={selectedPack || ""} onChange={handleChange}>
-      <StyledOption value="" disabled>
-        Choose your pack
-      </StyledOption>
-      <StyledOption value="small">Small Pack</StyledOption>
-      <StyledOption value="medium">Medium Pack</StyledOption>
-      <StyledOption value="large">Large Pack</StyledOption>
-    </StyledSelect>
+  return (
+    <SelectContainer>
+      <img src="pack.svg" alt="pack" />
+      <div>
+        <StyledSelect onClick={() => setOpen(!open)}>
+          <div>choose your pack</div>
+          {open ? <ExpandLess /> : <ExpandMore />}
+        </StyledSelect>
+        {open &&
+          packs.map(({ id, name, cost, weight }) => (
+            <StyledOption
+              key={id}
+              onClick={() => {
+                setSelectedPack({ cost, weight });
+                setOpen(false);
+              }}
+            >
+              {name}
+            </StyledOption>
+          ))}
+      </div>
     </SelectContainer>
   );
 };

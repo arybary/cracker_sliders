@@ -5,17 +5,15 @@ export interface CrackerPropsState {
   crackerPropsValue4: number;
 }
 
-export type PackOptions = "small" | "medium" | "large";
-
 export interface PackState {
-  selectedPack: PackOptions | null;
+  cost: number;
+  weight: number;
 }
 
 export interface Cracker {
   id: string;
   props: CrackerPropsState;
-  cost: number;
-  weight: number;
+  option: PackState;
 }
 
 export interface CrackerPropsForSlider {

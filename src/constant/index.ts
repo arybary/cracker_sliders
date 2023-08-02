@@ -6,11 +6,11 @@ export const navItems = [
   { name: "ACCOUNT", path: "/account" },
 ];
 
-export const pack = {
-  small: { cost: 28.5, weight: 0.5 },
-  medium: { cost: 33, weight: 0.66 },
-  large: { cost: 81.5, weight: 1.5 },
-};
+export const packs = [
+  { id: 1, name: "SMALL PACK", cost: 28.5, weight: 0.5 },
+  { id: 2, name: "MEDIUM PACK", cost: 33, weight: 0.66 },
+  { id: 3, name: "LARGE PACK", cost: 81.5, weight: 1.5 },
+];
 
 export const initialCrackers = {
   1: {
@@ -21,8 +21,10 @@ export const initialCrackers = {
       crackerPropsValue3: 61,
       crackerPropsValue4: 20,
     },
-    cost: 81.5,
-    weight: 1.5,
+    option: {
+      cost: 81.5,
+      weight: 1.5,
+    },
   },
   2: {
     id: "2",
@@ -32,8 +34,10 @@ export const initialCrackers = {
       crackerPropsValue3: 51,
       crackerPropsValue4: 16,
     },
-    cost: 28.5,
-    weight: 0.5,
+    option: {
+      cost: 28.5,
+      weight: 0.5,
+    },
   },
   3: {
     id: "3",
@@ -43,7 +47,9 @@ export const initialCrackers = {
       crackerPropsValue3: 65,
       crackerPropsValue4: 16,
     },
-    cost: 33,
-    weight: 0.66,
+    option: {
+      cost: 33,
+      weight: 0.66,
+    },
   },
 };

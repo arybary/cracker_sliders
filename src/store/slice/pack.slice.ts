@@ -1,17 +1,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { PackOptions, PackState } from "../../type";
+import { PackState } from "../../type";
 
 const initialState: PackState = {
-  selectedPack: null,
+  cost: 0,
+  weight: 0,
 };
 
 const packSlice = createSlice({
   name: "pack",
   initialState,
   reducers: {
-    setSelectedPack: (state, action: PayloadAction<PackOptions | null>) => {
-      state.selectedPack = action.payload;
-    },
+    setSelectedPack: (state, action: PayloadAction<PackState>) =>( {...state,...action.payload 
+    }),
   },
 });
 

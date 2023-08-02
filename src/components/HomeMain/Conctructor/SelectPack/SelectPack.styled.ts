@@ -2,13 +2,17 @@ import styled from "styled-components";
 
 export const SelectContainer = styled.div`
   display: flex;
+  align-items: start;
   gap: 20px;
 `;
 
-export const StyledSelect = styled.select`
+export const StyledSelect = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 249px;
   height: 56px;
-  padding: 16px 32px 16px 32px;
+  padding: 12px;
   border-radius: 90px;
   border: 2px solid #ff4200;
   gap: 8px;
@@ -17,22 +21,27 @@ export const StyledSelect = styled.select`
   font-weight: 500;
   line-height: 18px;
   letter-spacing: 1px;
-  text-align: left;
+  text-align: center;
   color: #ff4200;
   text-transform: uppercase;
-  & option {
-    outline: none;
-    width: 225px;
-    height: 100px;
-    border-bottom: 2px solid #ff4200;
-  }
+  cursor:pointer;
 `;
 
-export const StyledOption = styled.option`
+export const StyledOption = styled.li`
+  font-family: Rubik;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #ff4200;
   display: flex;
+  justify-content: center;
   align-items: center;
-  outline: none;
-  width: 225px;
-  height: 100px;
+  border: none; 
+  width: 249px;
+  height: 42px;
   border-bottom: 2px solid #ff4200;
+  text-transform: uppercase;
+  cursor:pointer;
 `;

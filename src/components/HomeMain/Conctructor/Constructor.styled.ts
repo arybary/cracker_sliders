@@ -37,5 +37,5 @@ export const ConstructorSubTitle = styled.div`
 export const ButtonsContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
 `;

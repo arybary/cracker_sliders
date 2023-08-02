@@ -2,7 +2,7 @@ import { TableCell } from "./DetailsTableRow.styled";
 import { Cracker } from "../../../../../../type";
 import { useActions } from "../../../../../../store/useActions";
 
-const DetailsTableRow: React.FC<Cracker> = ({ id, props, cost, weight }) => {
+const DetailsTableRow: React.FC<Cracker> = ({ id, props, option}) => {
   const { removeCracker } = useActions();
   const {
     crackerPropsValue1,
@@ -10,6 +10,7 @@ const DetailsTableRow: React.FC<Cracker> = ({ id, props, cost, weight }) => {
     crackerPropsValue3,
     crackerPropsValue4,
   } = props;
+  const{cost,weight}=option;
 
   return (
     <tr>
