@@ -1,4 +1,4 @@
-[Макет](https://www.figma.com/file/hASNKZMt0gydcsdLJvnO8a/Rexit-Frontend-Test-Task?type=design&node-id=0%3A1&mode=design&t=wipbUpt3PaS8OIT3-1)
+[ЗадачабМакет](https://www.figma.com/file/hASNKZMt0gydcsdLJvnO8a/Rexit-Frontend-Test-Task?type=design&node-id=0%3A1&mode=design&t=wipbUpt3PaS8OIT3-1)
 
 ### The tech stack is:
 
@@ -30,7 +30,3 @@ npm run build
 
 
 Author: Medvid Rostislav
-
-
-# Задача:
-- [Макет](https://www.figma.com/file/hASNKZMt0gydcsdLJvnO8a/Rexit-Frontend-Test-Task?type=design&node-id=0%3A1&mode=design&t=wipbUpt3PaS8OIT3-1)
