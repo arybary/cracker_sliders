@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const Navigation = styled.nav`
   display: flex;
+  flex-wrap: wrap;
   background: #33333380;
   align-items: center;
   justify-content: space-evenly;
