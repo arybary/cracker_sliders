@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import TestContent from "./page/TestContent";
-import HomePage from "./page/Home/index";
+import HomePage from "./page/Home";
 import store from "./store/store";
 
 const App: React.FC = () => (
