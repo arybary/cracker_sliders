@@ -1,6 +1,6 @@
 import React from "react";
 import { useActions } from "../../../../store/useActions";
-import { CrackerPropsForSlider } from "../../../../type";
+import { CrackerPropsForSlider } from "../../../../types";
 import {
   SliderValue,
   StyledSlider,

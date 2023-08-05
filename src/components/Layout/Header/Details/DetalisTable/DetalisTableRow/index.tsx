@@ -1,5 +1,5 @@
 import { TableCell } from "./DetailsTableRow.styled";
-import { Cracker } from "../../../../../../type";
+import { Cracker } from "../../../../../../types";
 import { useActions } from "../../../../../../store/useActions";
 
 const DetailsTableRow: React.FC<Cracker> = ({ id, props, option}) => {

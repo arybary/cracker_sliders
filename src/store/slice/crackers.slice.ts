@@ -4,7 +4,7 @@ import {
   EntityState,
 } from "@reduxjs/toolkit";
 import { initialCrackers } from "../../constant";
-import { Cracker } from "../../type";
+import { Cracker } from "../../types";
 
 export const crackersAdapter = createEntityAdapter<Cracker>();
 

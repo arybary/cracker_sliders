@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { PackState } from "../../type";
+import { PackState } from "../../types";
 
 const initialState: PackState = {
   cost: 0,

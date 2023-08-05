@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { CrackerPropsState } from "../../type";
+import { CrackerPropsState } from "../../types";
 
 const initialState: CrackerPropsState = {
   crackerPropsValue1: 25,

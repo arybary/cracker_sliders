@@ -16,7 +16,7 @@ import {
 } from "./Constructor.styled";
 import SelectPack from "./SelectPack";
 import SliderPropCracker from "./SliderPropCracker";
-import { CrackerPropsForSlider } from "../../../type";
+import { CrackerPropsForSlider } from "../../../types";
 
 const Constructor: React.FC = () => {
   const crackerProps = useTypedSelector(crackerPropsSelector);
