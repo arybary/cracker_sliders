@@ -4,6 +4,7 @@ export const SelectContainer = styled.div`
   display: flex;
   align-items: start;
   gap: 20px;
+  z-index: 99;
 `;
 
 export const StyledSelect = styled.button`
