@@ -45,4 +45,7 @@ export const StyledOption = styled.li`
   border-bottom: 2px solid #ff4200;
   text-transform: uppercase;
   cursor:pointer;
+  &:last-child {
+   border:none;
+  }
 `;
